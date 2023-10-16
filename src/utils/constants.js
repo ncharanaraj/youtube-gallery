@@ -4,3 +4,6 @@ export const YOUTUBE_VIDEOS_API =
 
 export const YOUTUBE_SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const USER_ICON =
+  "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png";

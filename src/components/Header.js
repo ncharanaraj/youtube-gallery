@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { USER_ICON, YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
 
 const Header = () => {
@@ -92,11 +92,7 @@ const Header = () => {
         )}
       </div>
       <div className="col-span-1">
-        <img
-          className="h-8"
-          alt="user-icon"
-          src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
-        />
+        <img className="h-8" alt="user-icon" src={USER_ICON} />
       </div>
     </div>
   );
