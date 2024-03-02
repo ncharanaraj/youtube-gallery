@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { USER_ICON, YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
+import { Bell, CircleUserRound, Menu, Search, Video } from "lucide-react";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const Header = () => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
       } else {
-        getSearchSuggestions();
+        // getSearchSuggestions();
       }
     }, 200);
 
@@ -47,34 +48,45 @@ const Header = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-5 shadow-lg items-center">
-      <div className="flex col-span-1">
-        <img
-          onClick={() => toggleMenuHandler()}
-          className="h-6 cursor-pointer"
-          alt="menu"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
-        />
-        <img
-          className="h-6 mx-2"
-          alt="youtube-logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuE54d8krphaVP1AQ1Jd4G1uRqLcA2N81TnA&usqp=CAU"
-        />
-      </div>
-      <div className="col-span-10 px-10">
-        <div>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
-            className="w-1/2 border border-gray-400 p-2 rounded-l-full pl-6 outline-none shadow-inner"
+    <div className="flex px-4 justify-between items-center">
+      <div className="flex items-center h-12 w-40">
+        <div className="p-2">
+          <Menu onClick={() => toggleMenuHandler()} />
+        </div>
+        <div className="px-4 h-5 w-full">
+          <img
+            className="w-full h-full"
+            alt="youtube-logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuE54d8krphaVP1AQ1Jd4G1uRqLcA2N81TnA&usqp=CAU"
           />
-          <button className="border border-gray-400 bg-gray-100 p-2 rounded-r-full px-4">
-            🔍
-          </button>
+        </div>
+      </div>
+      <div className="h-12">
+        <div className="flex justify-center items-center h-full py-1">
+          <form
+            className="flex items-center h-full"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <div className="border rounded-l-full pl-4 pr-1 h-full w-[568px]">
+              <input
+                type="text"
+                placeholder="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setShowSuggestions(false)}
+                className="outline-none h-full w-full"
+              />
+            </div>
+            <button
+              type="submit"
+              className="border rounded-r-full px-4 bg-slate-100 h-full "
+            >
+              <Search strokeWidth={0.5} />
+            </button>
+          </form>
         </div>
         {showSuggestions && (
           <div className="fixed bg-white w-[34rem] rounded-lg shadow-lg border border-gray-100">
@@ -91,8 +103,18 @@ const Header = () => {
           </div>
         )}
       </div>
-      <div className="col-span-1">
-        <img className="h-8" alt="user-icon" src={USER_ICON} />
+      <div className="w-56 flex justify-end">
+        <div className="flex items-center">
+          <div className="mr-2 p-2">
+            <Video />
+          </div>
+          <div className="mr-2 p-2">
+            <Bell />
+          </div>
+          <div className="mr-2 p-2">
+            <CircleUserRound />
+          </div>
+        </div>
       </div>
     </div>
   );
