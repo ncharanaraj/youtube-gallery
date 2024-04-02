@@ -31,7 +31,7 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="p-3 w-60 fixed left-0 overflow-y-scroll h-full">
+    <div className="p-3 w-60 fixed left-0 overflow-y-scroll h-full bg-white">
       <ul className="border-b-2">
         <div className="flex items-center px-3 h-10 w-full">
           <Home className="mr-4" />
