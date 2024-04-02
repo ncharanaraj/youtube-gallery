@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import { USER_ICON, YOUTUBE_SEARCH_API } from "../utils/constants";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
 import { Bell, CircleUserRound, Menu, Search, Video } from "lucide-react";
 
@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex px-4 justify-between items-center">
+    <div className="flex px-4 justify-between items-center fixed w-full top-0 bg-white">
       <div className="flex items-center h-12 w-40">
         <div className="p-2">
           <Menu onClick={() => toggleMenuHandler()} />

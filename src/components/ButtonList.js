@@ -18,7 +18,7 @@ const list = [
 
 const ButtonList = () => {
   return (
-    <div className="flex">
+    <div className="flex fixed bg-white py-2">
       {list.map((catName) => (
         <Button key={catName} name={catName} />
       ))}
