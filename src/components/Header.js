@@ -4,8 +4,10 @@ import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
 import { Bell, CircleUserRound, Menu, Search, Video } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -53,7 +55,7 @@ const Header = () => {
         <div className="p-2">
           <Menu onClick={() => toggleMenuHandler()} />
         </div>
-        <div className="px-4 h-5 w-full">
+        <div className="px-4 h-5 w-full" onClick={() => navigate("/")}>
           <img
             className="w-full h-full"
             alt="youtube-logo"

@@ -21,4 +21,13 @@
 - SuggesationContainer
   - SuggestionVideoCard
 
-##
+## Features
+
+- Search suggestions with debounce
+- Nested Comment section
+- Live Chat with API polling
+
+### Todo
+
+- Shimmer Effect
+- infinite scroll
