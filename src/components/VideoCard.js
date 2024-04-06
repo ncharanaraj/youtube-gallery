@@ -8,12 +8,12 @@ const VideoCard = ({ info }) => {
   //   const {} = statistics;
 
   return (
-    <div className="p-2 w-[420px]">
+    <div className="p-2 w-[420px] ">
       <div className="w-full h-[247px] ">
         <img
           src={thumbnails.medium.url}
           alt="thumbnails"
-          className="rounded-xl w-full h-full"
+          className="rounded-xl w-full h-full hover:rounded-none"
         />
       </div>
       <ul className="my-2">

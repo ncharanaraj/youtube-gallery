@@ -84,7 +84,7 @@ const Header = () => {
             </div>
             <button
               type="submit"
-              className="border rounded-r-full px-4 bg-slate-100 h-full "
+              className="border rounded-r-full px-4 bg-slate-100 h-full hover:bg-[#f2f2f2]"
             >
               <Search strokeWidth={0.5} />
             </button>
