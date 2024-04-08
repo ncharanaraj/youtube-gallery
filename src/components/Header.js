@@ -52,12 +52,12 @@ const Header = () => {
   return (
     <div className="flex px-4 justify-between items-center fixed w-full top-0 bg-white">
       <div className="flex items-center h-12 w-40">
-        <div className="p-2 hover:bg-[#f2f2f2] hover:rounded-full">
+        <div className="p-2 hover:bg-[#f2f2f2] hover:rounded-full cursor-pointer">
           <Menu onClick={() => toggleMenuHandler()} />
         </div>
         <div className="px-4 h-5 w-full" onClick={() => navigate("/")}>
           <img
-            className="w-full h-full"
+            className="w-full h-full cursor-pointer"
             alt="youtube-logo"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuE54d8krphaVP1AQ1Jd4G1uRqLcA2N81TnA&usqp=CAU"
           />
@@ -107,13 +107,13 @@ const Header = () => {
       </div>
       <div className="w-56 flex justify-end">
         <div className="flex items-center">
-          <div className="mr-2 p-2 hover:bg-[#f2f2f2] hover:rounded-full">
+          <div className="mr-2 p-2 hover:bg-[#f2f2f2] hover:rounded-full cursor-pointer">
             <Video />
           </div>
-          <div className="mr-2 p-2 hover:bg-[#f2f2f2] hover:rounded-full">
+          <div className="mr-2 p-2 hover:bg-[#f2f2f2] hover:rounded-full cursor-pointer">
             <Bell />
           </div>
-          <div className="mr-2 p-2 hover:bg-[#f2f2f2] hover:rounded-full">
+          <div className="mr-2 p-2 hover:bg-[#f2f2f2] hover:rounded-full cursor-pointer">
             <CircleUserRound />
           </div>
         </div>
